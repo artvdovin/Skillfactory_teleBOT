@@ -27,7 +27,7 @@ def convert (message:telebot.types.Message):
         values = message.text.split(' ')
         if len(values) != 3:
             raise ConvertionException('Слишком много параметров')
-        quote, base, amount = values
+        base, quote, amount = values
 
 
         total_base = Convertion.convert(quote,base,amount)
