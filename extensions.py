@@ -26,7 +26,7 @@ class Convertion:
             raise ConvertionException(f'Не удалось обработать количество {amount}')
         r = requests.get(f'http://apilayer.net/api/live?access_key={APIKEY}&currencies={quote_ticker}&source={base_ticker}&format=1')
         key = base_ticker+quote_ticker
-        total_base = str(r.json()['quotes'][key])
+        total_base = str(r.json()['quotes'][key]*amount)
 
 
         return total_base
